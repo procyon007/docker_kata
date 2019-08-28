@@ -23,6 +23,9 @@ RUN echo "${USER}:password123" | chpasswd
 #ログインシェルを指定
 #RUN sed -i.bak -e "s#${HOME}:#${HOME}:${SHELL}#" /etc/passwd
 
+#SSH鍵作成
+RUN ssh-keygen -A
+
 EXPOSE 22
 
 CMD \["/usr/sbin/sshd", "-D"\]
