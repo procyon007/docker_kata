@@ -24,7 +24,8 @@ RUN echo "${USER}:password123" | chpasswd
 #RUN sed -i.bak -e "s#${HOME}:#${HOME}:${SHELL}#" /etc/passwd
 
 #SSH鍵作成
-RUN ssh-keygen -A
+RUN /usr/bin/ssh-keygen -t rsa -b 2048 -f /etc/ssh/ssh_host_rsa_key -N ""
+RUn /usr/bin/ssh-keygen -t dsa -b 1024 -f /etc/ssh/ssh_host_dsa_key -N "" 
 
 EXPOSE 22
 
