@@ -28,4 +28,4 @@ RUN ssh-keygen -A
 
 EXPOSE 22
 
-CMD \["/usr/sbin/sshd", "-D"\]
+CMD ["/usr/sbin/sshd", "-D"]
